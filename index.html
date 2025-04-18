@@ -446,6 +446,190 @@
       margin-right: 1rem;
     }
     
+    /* Revamped Technical Expertise Section */
+    .skills-section {
+      background-color: rgba(17, 34, 64, 0.3);
+      position: relative;
+    }
+    
+    .skills-tabs-container {
+      position: relative;
+      margin-top: 3rem;
+    }
+    
+    .skills-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+      position: relative;
+      border-bottom: none;
+    }
+    
+    .skill-tab-btn {
+      background-color: transparent;
+      border: none;
+      color: var(--slate);
+      padding: 0.8rem 1.5rem;
+      cursor: pointer;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      position: relative;
+      font-family: 'Poppins', sans-serif;
+      border-radius: 4px 4px 0 0;
+      margin-right: 0.25rem;
+      border-bottom: 2px solid transparent;
+    }
+    
+    .skill-tab-btn:hover {
+      color: var(--secondary-color);
+      background-color: rgba(100, 255, 218, 0.05);
+    }
+    
+    .skill-tab-btn.active {
+      color: var(--secondary-color);
+      background-color: rgba(100, 255, 218, 0.1);
+      border-bottom: 2px solid var(--secondary-color);
+    }
+    
+    .skills-display {
+      background-color: var(--dark-bg-light);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px -15px var(--navy-shadow);
+      border: 1px solid rgba(100, 255, 218, 0.1);
+      transition: all 0.3s ease;
+    }
+    
+    .skill-content {
+      display: none;
+      padding: 2rem;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+    
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .skill-content.active {
+      display: block;
+    }
+    
+    .skill-content h3 {
+      color: var(--lightest-text);
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+      position: relative;
+      padding-bottom: 0.75rem;
+    }
+    
+    .skill-content h3:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 3rem;
+      height: 2px;
+      background: linear-gradient(to right, var(--secondary-color), transparent);
+    }
+    
+    .skill-tags {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+    
+    .skill-tag {
+      background-color: rgba(17, 34, 64, 0.6);
+      border-left: 3px solid transparent;
+      color: var(--light-text);
+      padding: 0.8rem 1.2rem;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+    
+    .skill-tag:before {
+      content: '▹';
+      color: var(--secondary-color);
+      margin-right: 10px;
+      font-size: 1rem;
+    }
+    
+    .skill-tag:hover {
+      transform: translateY(-3px);
+      background-color: rgba(100, 255, 218, 0.1);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+    
+    .skills-category-group {
+      margin-bottom: 2rem;
+    }
+    
+    .skills-category-title {
+      font-size: 1.1rem;
+      color: var(--lightest-text);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      font-weight: 500;
+    }
+    
+    .skills-category-title .category-icon {
+      margin-right: 10px;
+      color: var(--secondary-color);
+      width: 24px;
+      text-align: center;
+    }
+    
+    .skill-content-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    
+    .skill-progress-container {
+      margin-top: 2.5rem;
+    }
+    
+    .skill-progress-item {
+      margin-bottom: 1.5rem;
+    }
+    
+    .skill-progress-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+    }
+    
+    .skill-progress-name {
+      color: var(--lightest-text);
+      font-weight: 500;
+    }
+    
+    .skill-progress-bar {
+      height: 6px;
+      background-color: var(--dark-bg);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    
+    .skill-progress-value {
+      height: 100%;
+      background-color: var(--secondary-color);
+      border-radius: 3px;
+    }
+    
     /* Experience timeline styles */
     .timeline-container {
       position: relative;
@@ -837,7 +1021,8 @@
     
     .skill-content {
       display: none;
-      padding: 1rem;
+      padding: 2rem;
+      animation: fadeIn 0.5s ease-in-out;
     }
     
     .skill-content.active {
@@ -851,22 +1036,30 @@
     }
     
     .skill-tags {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
       gap: 1rem;
     }
     
     .skill-tag {
-      background-color: var(--dark-bg-light);
+      background-color: rgba(17, 34, 64, 0.6);
+      border-left: 3px solid transparent;
       color: var(--light-text);
-      padding: 0.6rem 1.2rem;
-      border-radius: 5px;
+      padding: 0.8rem 1.2rem;
+      border-radius: 4px;
       font-size: 0.9rem;
       transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      position: relative;
     }
     
-    .skill-tag.expert {
-      border-left: 3px solid var(--secondary-color);
+    .skill-tag:before {
+      content: '▹';
+      color: var(--secondary-color);
+      margin-right: 10px;
+      font-size: 1rem;
     }
     
     .skill-tag:hover {
@@ -1209,118 +1402,259 @@
 
   <!-- Skills Section -->
   <section id="skills" class="skills-section">
-  <div class="container">
-    <h2 class="section-title" data-aos="fade-right"><span>02.</span>Technical Expertise</h2>
-    
-    <div class="skills-tabs-container" data-aos="fade-up" data-aos-delay="100">
-      <div class="skills-tabs" data-aos="fade-up">
-        <button class="skill-tab-btn active" data-skill-tab="data-engineering">Data Engineering</button>
-        <button class="skill-tab-btn" data-skill-tab="cloud">Cloud & Infrastructure</button>
-        <button class="skill-tab-btn" data-skill-tab="programming">Programming</button>
-        <button class="skill-tab-btn" data-skill-tab="ai-ml">AI & ML</button>
-        <button class="skill-tab-btn" data-skill-tab="devops">DevOps</button>
-        <button class="skill-tab-btn" data-skill-tab="analytics">Analytics</button>
-        <button class="skill-tab-btn" data-skill-tab="enterprise">Enterprise Tools</button>
-        <button class="skill-tab-btn" data-skill-tab="methodologies">Methodologies</button>
-      </div>
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-right"><span>02.</span>Technical Expertise</h2>
       
-      <div class="skills-display">
-        <div class="skill-content active" id="data-engineering" data-aos="zoom-in-up" data-aos-delay="150">
-          <h3>Data Engineering & Architecture</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">Azure Synapse Analytics</span>
-            <span class="skill-tag">Databricks & Delta Lake</span>
-            <span class="skill-tag">Microsoft Fabric</span>
-            <span class="skill-tag">ETL/ELT Pipeline Design</span>
-            <span class="skill-tag">Data Modeling & Optimization</span>
-            <span class="skill-tag">Data Quality Management</span>
-            <span class="skill-tag">Streaming Data Processing</span>
-          </div>
+      <div class="skills-tabs-container" data-aos="fade-up" data-aos-delay="100">
+        <div class="skills-tabs" data-aos="fade-up">
+          <button class="skill-tab-btn active" data-skill-tab="data-engineering">Data Engineering</button>
+          <button class="skill-tab-btn" data-skill-tab="cloud">Cloud & Infrastructure</button>
+          <button class="skill-tab-btn" data-skill-tab="programming">Programming</button>
+          <button class="skill-tab-btn" data-skill-tab="ai-ml">AI & ML</button>
+          <button class="skill-tab-btn" data-skill-tab="devops">DevOps</button>
+          <button class="skill-tab-btn" data-skill-tab="analytics">Analytics</button>
         </div>
         
-        <div class="skill-content" id="cloud" data-aos="zoom-in-up" data-aos-delay="150">
-          <h3>Cloud & Infrastructure</h3>
-          <div class="skill-tags">
-            <span class="skill-tag expert">Microsoft Azure (Expert)</span>
-            <span class="skill-tag">Azure Data Lake Storage</span>
-            <span class="skill-tag">Azure Data Factory</span>
-            <span class="skill-tag">Azure SQL Database & DW</span>
-            <span class="skill-tag">Infrastructure as Code (IaC)</span>
-            <span class="skill-tag">Managed Identities & RBAC</span>
+        <div class="skills-display">
+          <div class="skill-content active" id="data-engineering" data-aos="zoom-in-up" data-aos-delay="150">
+            <h3>Data Engineering & Architecture</h3>
+            <div class="skill-content-grid">
+              <div class="skills-category-group">
+                <h4 class="skills-category-title">
+                  <i class="category-icon fas fa-database"></i>
+                  Data Platforms
+                </h4>
+                <div class="skill-tags">
+                  <div class="skill-tag expert">Azure Synapse Analytics</div>
+                  <div class="skill-tag expert">Databricks & Delta Lake</div>
+                  <div class="skill-tag">Microsoft Fabric</div>
+                  <div class="skill-tag expert">Azure Data Lake</div>
+                </div>
+              </div>
+              <div class="skills-category-group">
+                <h4 class="skills-category-title">
+                  <i class="category-icon fas fa-exchange-alt"></i>
+                  Data Processing
+                </h4>
+                <div class="skill-tags">
+                  <div class="skill-tag expert">ETL/ELT Pipeline Design</div>
+                  <div class="skill-tag">Streaming Data Processing</div>
+                  <div class="skill-tag">Data Integration</div>
+                </div>
+              </div>
+              <div class="skills-category-group">
+                <h4 class="skills-category-title">
+                  <i class="category-icon fas fa-sitemap"></i>
+                  Data Architecture
+                </h4>
+                <div class="skill-tags">
+                  <div class="skill-tag">Data Modeling & Optimization</div>
+                  <div class="skill-tag">Data Quality Management</div>
+                  <div class="skill-tag">Data Governance</div>
+                  <div class="skill-tag">Metadata Management</div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-        
-        <div class="skill-content" id="programming" data-aos="zoom-in-up" data-aos-delay="150">
-          <h3>Programming & Development</h3>
-          <div class="skill-tags">
-            <span class="skill-tag expert">Python (Advanced)</span>
-            <span class="skill-tag">C# & .NET Framework</span>
-            <span class="skill-tag">PowerShell Automation</span>
-            <span class="skill-tag">PySpark & Spark SQL</span>
-            <span class="skill-tag">SCOPE & KQL</span>
-            <span class="skill-tag">T-SQL & SQL Server</span>
+          
+          <div class="skill-content" id="cloud" data-aos="zoom-in-up" data-aos-delay="150">
+            <h3>Cloud & Infrastructure</h3>
+            <div class="skill-content-grid">
+              <div class="skills-category-group">
+                <h4 class="skills-category-title">
+                  <i class="category-icon fab fa-microsoft"></i>
+                  Azure Services
+                </h4>
+                <div class="skill-tags">
+                  <div class="skill-tag expert">Microsoft Azure</div>
+                  <div class="skill-tag expert">Azure Data Lake Storage</div>
+                  <div class="skill-tag expert">Azure Data Factory</div>
+                  <div class="skill-tag">Azure SQL Database & DW</div>
+                </div>
+              </div>
+              <div class="skills-category-group">
+                <h4 class="skills-category-title">
+                  <i class="category-icon fas fa-shield-alt"></i>
+                  Security & Governance
+                </h4>
+                <div class="skill-tags">
+                  <div class="skill-tag">Managed Identities</div>
+                  <div class="skill-tag">Role-Based Access Control</div>
+                  <div class="skill-tag">Key Vault Integration</div>
+                </div>
+              </div>
+              <div class="skills-category-group">
+                <h4 class="skills-category-title">
+                  <i class="category-icon fas fa-server"></i>
+                  Infrastructure
+                </h4>
+                <div class="skill-tags">
+                  <div class="skill-tag">Infrastructure as Code (IaC)</div>
+                  <div class="skill-tag">Azure Functions</div>
+                  <div class="skill-tag">Azure App Services</div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-        
-        <div class="skill-content" id="ai-ml" data-aos="zoom-in-up" data-aos-delay="150">
-          <h3>AI & Machine Learning</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">Azure OpenAI Integration</span>
-            <span class="skill-tag">LlamaIndex Implementation</span>
-            <span class="skill-tag">Retrieval Augmented Generation (RAG)</span>
-            <span class="skill-tag">LLM Application Development</span>
-            <span class="skill-tag">AI/ML Pipeline Integration</span>
-            <span class="skill-tag">Vector Embeddings</span>
+          
+          <div class="skill-content" id="programming" data-aos="zoom-in-up" data-aos-delay="150">
+            <h3>Programming & Development</h3>
+            <div class="skill-content-grid">
+              <div class="skills-category-group">
+                <h4 class="skills-category-title">
+                  <i class="category-icon fas fa-code"></i>
+                  Languages
+                </h4>
+                <div class="skill-tags">
+                  <div class="skill-tag expert">Python</div>
+                  <div class="skill-tag">C# & .NET Framework</div>
+                  <div class="skill-tag">JavaScript & TypeScript</div>
+                  <div class="skill-tag">PowerShell</div>
+                </div>
+              </div>
+              <div class="skills-category-group">
+                <h4 class="skills-category-title">
+                  <i class="category-icon fas fa-database"></i>
+                  Data Technologies
+                </h4>
+                <div class="skill-tags">
+                  <div class="skill-tag expert">PySpark & Spark SQL</div>
+                  <div class="skill-tag expert">T-SQL & SQL Server</div>
+                  <div class="skill-tag">SCOPE & KQL</div>
+                </div>
+              </div>
+              <div class="skills-category-group">
+                <h4 class="skills-category-title">
+                  <i class="category-icon fas fa-file-code"></i>
+                  API & Integration
+                </h4>
+                <div class="skill-tags">
+                  <div class="skill-tag">REST API Development</div>
+                  <div class="skill-tag">Microservices Architecture</div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-        
-        <div class="skill-content" id="devops" data-aos="zoom-in-up" data-aos-delay="150">
-          <h3>DevOps & CI/CD</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">Azure DevOps (Pipelines, Boards)</span>
-            <span class="skill-tag">CI/CD Automation</span>
-            <span class="skill-tag">Git Version Control</span>
-            <span class="skill-tag">Release Management</span>
-            <span class="skill-tag">Infrastructure Automation</span>
+          
+          <div class="skill-content" id="ai-ml" data-aos="zoom-in-up" data-aos-delay="150">
+            <h3>AI & Machine Learning</h3>
+            <div class="skill-content-grid">
+              <div class="skills-category-group">
+                <h4 class="skills-category-title">
+                  <i class="category-icon fas fa-robot"></i>
+                  LLM Technologies
+                </h4>
+                <div class="skill-tags">
+                  <div class="skill-tag expert">Azure OpenAI Integration</div>
+                  <div class="skill-tag expert">Retrieval Augmented Generation (RAG)</div>
+                  <div class="skill-tag">LLM Application Development</div>
+                </div>
+              </div>
+              <div class="skills-category-group">
+                <h4 class="skills-category-title">
+                  <i class="category-icon fas fa-project-diagram"></i>
+                  AI Infrastructure
+                </h4>
+                <div class="skill-tags">
+                  <div class="skill-tag">Semantic Kernel</div>
+                  <div class="skill-tag">Vector Embeddings</div>
+                  <div class="skill-tag">Vector Databases</div>
+                </div>
+              </div>
+              <div class="skills-category-group">
+                <h4 class="skills-category-title">
+                  <i class="category-icon fas fa-brain"></i>
+                  Machine Learning
+                </h4>
+                <div class="skill-tags">
+                  <div class="skill-tag">ML Pipelines</div>
+                  <div class="skill-tag">Azure AI Services</div>
+                  <div class="skill-tag">Model Deployment</div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-        
-        <div class="skill-content" id="analytics" data-aos="zoom-in-up" data-aos-delay="150">
-          <h3>Analytics & Visualization</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">Power BI Dashboard Development</span>
-            <span class="skill-tag">Elastic Search Implementation</span>
-            <span class="skill-tag">Real-time Analytics Solutions</span>
-            <span class="skill-tag">Data Storytelling</span>
-            <span class="skill-tag">Executive Reporting Systems</span>
+          
+          <div class="skill-content" id="devops" data-aos="zoom-in-up" data-aos-delay="150">
+            <h3>DevOps & CI/CD</h3>
+            <div class="skill-content-grid">
+              <div class="skills-category-group">
+                <h4 class="skills-category-title">
+                  <i class="category-icon fas fa-code-branch"></i>
+                  Source Control
+                </h4>
+                <div class="skill-tags">
+                  <div class="skill-tag">Git Version Control</div>
+                  <div class="skill-tag">GitHub</div>
+                  <div class="skill-tag">Azure DevOps Repos</div>
+                </div>
+              </div>
+              <div class="skills-category-group">
+                <h4 class="skills-category-title">
+                  <i class="category-icon fas fa-cogs"></i>
+                  Automation
+                </h4>
+                <div class="skill-tags">
+                  <div class="skill-tag expert">CI/CD Automation</div>
+                  <div class="skill-tag">YAML Pipeline Development</div>
+                  <div class="skill-tag">Release Management</div>
+                </div>
+              </div>
+              <div class="skills-category-group">
+                <h4 class="skills-category-title">
+                  <i class="category-icon fas fa-tools"></i>
+                  Tools & Platforms
+                </h4>
+                <div class="skill-tags">
+                  <div class="skill-tag">Azure DevOps</div>
+                  <div class="skill-tag">Infrastructure Automation</div>
+                  <div class="skill-tag">Docker Containers</div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-        
-        <div class="skill-content" id="enterprise" data-aos="zoom-in-up" data-aos-delay="150">
-          <h3>Enterprise Tools & Systems</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">COSMOS Ecosystem</span>
-            <span class="skill-tag">SSIS Integration</span>
-            <span class="skill-tag">Visual Studio & VS Code</span>
-            <span class="skill-tag">Enterprise Data Warehouse</span>
-            <span class="skill-tag">Legacy System Integration</span>
-          </div>
-        </div>
-        
-        <div class="skill-content" id="methodologies" data-aos="zoom-in-up" data-aos-delay="150">
-          <h3>Methodologies</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">Agile/Scrum Development</span>
-            <span class="skill-tag">Data Architecture Design</span>
-            <span class="skill-tag">Solutions Engineering</span>
-            <span class="skill-tag">Technical Documentation</span>
-            <span class="skill-tag">Cross-functional Collaboration</span>
+          
+          <div class="skill-content" id="analytics" data-aos="zoom-in-up" data-aos-delay="150">
+            <h3>Analytics & Visualization</h3>
+            <div class="skill-content-grid">
+              <div class="skills-category-group">
+                <h4 class="skills-category-title">
+                  <i class="category-icon fas fa-chart-line"></i>
+                  BI & Reporting
+                </h4>
+                <div class="skill-tags">
+                  <div class="skill-tag expert">Power BI Dashboard Development</div>
+                  <div class="skill-tag">Data Storytelling</div>
+                  <div class="skill-tag">Executive Reporting Systems</div>
+                </div>
+              </div>
+              <div class="skills-category-group">
+                <h4 class="skills-category-title">
+                  <i class="category-icon fas fa-tachometer-alt"></i>
+                  Real-time Analytics
+                </h4>
+                <div class="skill-tags">
+                  <div class="skill-tag">Real-time Analytics Solutions</div>
+                  <div class="skill-tag">Streaming Analytics</div>
+                  <div class="skill-tag">KPI Monitoring & Design</div>
+                </div>
+              </div>
+              <div class="skills-category-group">
+                <h4 class="skills-category-title">
+                  <i class="category-icon fas fa-search"></i>
+                  Search & Insights
+                </h4>
+                <div class="skill-tags">
+                  <div class="skill-tag">Elastic Search Implementation</div>
+                  <div class="skill-tag">Data Discovery</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- Experience Section -->
   <section id="experience">
@@ -1651,4 +1985,3 @@
   </script>
 </body>
 </html>
-``` 
